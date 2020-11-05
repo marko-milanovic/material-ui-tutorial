@@ -12,12 +12,17 @@ import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
+import AppBar from '@material-ui/core/AppBar';
+import ToolBar from '@material-ui/core/ToolBar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+
 import {
   makeStyles,
   ThemeProvider,
   createMuiTheme,
 } from '@material-ui/core/styles';
-import { green, orange } from '@material-ui/core/colors';
+import { blue, orange } from '@material-ui/core/colors';
 import 'fontsource-roboto';
 
 const useStyles = makeStyles({
@@ -40,7 +45,7 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: green[400],
+      main: blue[400],
     },
     secondary: {
       main: orange[400],
@@ -77,6 +82,15 @@ const App = () => {
       <Container maxWidth="md">
         <div className="App">
           <header className="App-header">
+            <AppBar>
+              <ToolBar>
+                <IconButton>
+                  <MenuIcon />
+                </IconButton>
+                <Typography variant="h6">MUI Theming</Typography>
+                <Button>Login</Button>
+              </ToolBar>
+            </AppBar>
             <Typography variant="h2">Welcome to MUI</Typography>
             <Typography variant="subtitle">
               Learn how to use Material Ui
