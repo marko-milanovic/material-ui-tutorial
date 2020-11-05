@@ -74,7 +74,7 @@ const CheckboxExample = () => {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Container maxWidth="xs">
+      <Container maxWidth="md">
         <div className="App">
           <header className="App-header">
             <Typography variant="h2">Welcome to MUI</Typography>
@@ -83,17 +83,17 @@ const App = () => {
             </Typography>
             <ButtonStyled />
             <Grid container spacing={4} justify="center">
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
-              <Grid item>
-                <Paper style={{ height: 75, width: 50 }} />
+              <Grid item xs={3} lg={12}>
+                <Paper style={{ height: 75, width: '100%' }} />
               </Grid>
             </Grid>
             <TextField
