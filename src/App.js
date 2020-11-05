@@ -8,7 +8,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import TextField from '@material-ui/core/TextField';
 
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  makeStyles,
+  ThemeProvider,
+  createMuiTheme,
+} from '@material-ui/core/styles';
+import { green, orange } from '@material-ui/core/colors';
 
 const useStyles = makeStyles({
   root: {
@@ -18,6 +23,17 @@ const useStyles = makeStyles({
     color: 'white',
     marginBottom: 15,
     padding: '5 30px',
+  },
+});
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: green[400],
+    },
+    secondary: {
+      main: orange[400],
+    },
   },
 });
 
@@ -46,27 +62,29 @@ const CheckboxExample = () => {
 
 const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <ButtonStyled />
-        <TextField
-          variant="outlined"
-          color="secondary"
-          type="email"
-          label="Enter your email"
-          placeholder="test@test.com"
-        />
-        <CheckboxExample />
-        <ButtonGroup variant="contained">
-          <Button startIcon={<SaveIcon />} color="primary">
-            Save
-          </Button>
-          <Button startIcon={<DeleteIcon />} color="secondary">
-            Discard
-          </Button>
-        </ButtonGroup>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <header className="App-header">
+          <ButtonStyled />
+          <TextField
+            variant="outlined"
+            color="secondary"
+            type="email"
+            label="Enter your email"
+            placeholder="test@test.com"
+          />
+          <CheckboxExample />
+          <ButtonGroup variant="contained">
+            <Button startIcon={<SaveIcon />} color="primary">
+              Save
+            </Button>
+            <Button startIcon={<DeleteIcon />} color="secondary">
+              Discard
+            </Button>
+          </ButtonGroup>
+        </header>
+      </div>
+    </ThemeProvider>
   );
 };
 
